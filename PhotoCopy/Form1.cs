@@ -85,7 +85,7 @@ namespace PhotoCopy
 
                     string filename = Path.GetFileName(file);
                     string targetFile = Path.Combine(currentDestinationFolder, filename);
-                    string extension = Path.GetExtension(file);
+                    string extension = Path.GetExtension(file).ToLower();
 
                     File.Copy(file, targetFile);
                     if ((deleteJpeg && jpgExtensions.Contains(extension)) ||
